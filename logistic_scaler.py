@@ -3,7 +3,7 @@ import numpy as np
 
 def readData(filename,folder=""):
     data = np.loadtxt(os.path.join(folder, filename), delimiter=',')
-    print('Original data shape', data.shape)
+    print('Dữ liệu ban đầu: ', data.shape)
     X = data[:,:-1]
     print('X shape: ', X.shape)
     y = data[:,-1]
@@ -12,9 +12,9 @@ def readData(filename,folder=""):
     print('Number of training examples m = ', m)
     x0 = np.ones((m,1))
     X = np.hstack([x0, X])
-    print('Modified X shape: ', X.shape)
+    print('Thay đổi X shape: ', X.shape)
     y = np.reshape(y, (m,1))
-    print('Modified y shape: ', y.shape)
+    print('Thay đổi y shape: ', y.shape)
     return X, y
 
 def featureVectorScaling(data):
